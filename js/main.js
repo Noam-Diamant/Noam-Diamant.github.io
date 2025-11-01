@@ -15,8 +15,8 @@ const FEATURED_REPOS = [
 
 // Repositories to exclude from display
 const EXCLUDED_REPOS = [
-    'Boicopm',
-    'minhas',
+    'biocopm',
+    'minhash',
     'Noam-Diamant.github.io',
     'important_acts_ftrs'
 ];
