@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Noam Diamant - M.Sc. Student in Machine Learning. Portfolio showcasing projects in AI, ML, and Computer Vision.">
+    <title>Noam Diamant | Machine Learning Researcher</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="#home">Noam Diamant</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <div class="hero-text fade-in">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-text">Noam Diamant</span>
+                </h1>
+                <p class="hero-subtitle">M.Sc. Student in Machine Learning</p>
+                <p class="hero-description">
+                    Exploring the frontiers of AI, Deep Learning, and Computer Vision
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <p>Scroll Down</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title reveal" data-reveal="fade-up">About Me</h2>
+            <div class="about-content">
+                <div class="about-image reveal" data-reveal="slide-right">
+                    <div class="image-wrapper">
+                        <img id="profile-photo" src="https://github.com/Noam-Diamant.png" alt="Noam Diamant" class="profile-img">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+                <div class="about-text reveal" data-reveal="slide-left">
+                    <h3>Machine Learning Researcher</h3>
+                    <p>
+                        I'm currently pursuing my M.Sc. in Machine Learning, focusing on cutting-edge research 
+                        in artificial intelligence and deep learning. My passion lies in developing innovative 
+                        solutions that bridge theoretical concepts with practical applications.
+                    </p>
+                    <p>
+                        With a strong foundation in computer science and mathematics, I specialize in:
+                    </p>
+                    <ul class="skills-list">
+                        <li><i class="fas fa-check-circle"></i> Deep Learning & Neural Networks</li>
+                        <li><i class="fas fa-check-circle"></i> Computer Vision</li>
+                        <li><i class="fas fa-check-circle"></i> Natural Language Processing</li>
+                        <li><i class="fas fa-check-circle"></i> Model Optimization & Deployment</li>
+                        <li><i class="fas fa-check-circle"></i> Research & Development</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://github.com/Noam-Diamant" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/noam-diamant-6429b321b/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title reveal" data-reveal="fade-up">Featured Projects</h2>
+            <p class="section-subtitle reveal" data-reveal="fade-up">
+                Automatically updated from my GitHub repositories
+            </p>
+            
+            <!-- Loading State -->
+            <div id="projects-loading" class="loading-state">
+                <div class="spinner"></div>
+                <p>Loading projects...</p>
+            </div>
+            
+            <!-- Error State -->
+            <div id="projects-error" class="error-state" style="display: none;">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>Unable to load projects. Please visit my <a href="https://github.com/Noam-Diamant" target="_blank">GitHub profile</a>.</p>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div id="projects-grid" class="projects-grid">
+                <!-- Projects will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title reveal" data-reveal="fade-up">Get In Touch</h2>
+            <p class="section-subtitle reveal" data-reveal="fade-up">
+                Let's collaborate on exciting ML projects or discuss research opportunities
+            </p>
+            
+            <div class="contact-content reveal" data-reveal="zoom-in">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                        <a href="https://github.com/Noam-Diamant" target="_blank" rel="noopener">@Noam-Diamant</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <a href="https://www.linkedin.com/in/noam-diamant-6429b321b/" target="_blank" rel="noopener">Noam Diamant</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Noam Diamant. Built with passion for Machine Learning.</p>
+            <div class="footer-links">
+                <a href="https://github.com/Noam-Diamant" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/noam-diamant-6429b321b/" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
