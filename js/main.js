@@ -60,7 +60,14 @@ async function fetchGitHubProjects() {
         
         // Filter out forks, excluded repos, and sort by update date
         const filteredRepos = repos
-            .filter(repo => !repo.fork && !EXCLUDED_REPOS.includes(repo.name))
+            .filter(repo => {
+                if (repo.fork) return false;
+                if (EXCLUDED_REPOS.includes(repo.name)) {
+                    console.log('Excluding repo:', repo.name);
+                    return false;
+                }
+                return true;
+            })
             .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
         
         // Hide loading state
