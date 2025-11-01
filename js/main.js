@@ -93,6 +93,25 @@ function displayProjects(repos) {
     });
 }
 
+// Helper function to truncate description to one sentence
+function truncateToOneSentence(text) {
+    if (!text) return 'No description provided.';
+    
+    // Find the first sentence-ending punctuation
+    const sentenceEnd = text.match(/[.!?]/);
+    if (sentenceEnd) {
+        const firstSentence = text.substring(0, sentenceEnd.index + 1).trim();
+        return firstSentence;
+    }
+    
+    // If no sentence ending found, limit to 100 characters
+    if (text.length > 100) {
+        return text.substring(0, 97).trim() + '...';
+    }
+    
+    return text.trim();
+}
+
 // Create a project card element
 function createProjectCard(repo, isFeatured = false) {
     const card = document.createElement('div');
@@ -100,7 +119,7 @@ function createProjectCard(repo, isFeatured = false) {
     
     const language = repo.language || 'Unknown';
     const languageColor = LANGUAGE_COLORS[language] || '#8e92ab';
-    const description = repo.description || 'No description provided.';
+    const description = truncateToOneSentence(repo.description);
     const stars = repo.stargazers_count || 0;
     const forks = repo.forks_count || 0;
     const lastUpdated = formatDate(repo.pushed_at);
