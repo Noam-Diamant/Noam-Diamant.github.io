@@ -13,6 +13,14 @@ const FEATURED_REPOS = [
     'FVS'
 ];
 
+// Repositories to exclude from display
+const EXCLUDED_REPOS = [
+    'Boicopm',
+    'minhas',
+    'Noam-Diamant.github.io',
+    'important_acts_ftrs'
+];
+
 // Language colors (GitHub's color scheme)
 const LANGUAGE_COLORS = {
     'JavaScript': '#f1e05a',
@@ -50,9 +58,9 @@ async function fetchGitHubProjects() {
         
         const repos = await response.json();
         
-        // Filter out forks and sort by update date
+        // Filter out forks, excluded repos, and sort by update date
         const filteredRepos = repos
-            .filter(repo => !repo.fork)
+            .filter(repo => !repo.fork && !EXCLUDED_REPOS.includes(repo.name))
             .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
         
         // Hide loading state
